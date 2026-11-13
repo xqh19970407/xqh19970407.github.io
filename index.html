@@ -177,15 +177,15 @@
         .honor-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); opacity: .5; }
 
         footer { text-align: center; padding: 32px 0; color: var(--dim); font-size: 12px; margin-top: 16px; }
-        .like-area { margin-bottom: 16px; }
-        .like-button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 16px; border: 1px solid var(--border); border-radius: 20px; background: var(--bg); color: var(--accent); font: inherit; font-size: 13px; cursor: pointer; }
+        .like-area { margin-top: 10px; }
+        .like-button { display: inline-flex; align-items: center; gap: 5px; min-height: 30px; padding: 4px 10px; border: 1px solid var(--border); border-radius: 16px; background: var(--bg); color: var(--accent); font: inherit; font-size: 12px; cursor: pointer; }
         .like-button:hover:not(:disabled), .like-button[aria-pressed="true"] { background: var(--accent-light); border-color: var(--accent); }
         .like-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
         .like-button:disabled { cursor: default; }
-        .like-button svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+        .like-button svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; }
         .like-button[aria-pressed="true"] svg { fill: currentColor; }
         .like-count { min-width: 3ch; font-variant-numeric: tabular-nums; }
-        .like-message { margin-top: 6px; color: var(--muted); }
+        .like-message { margin-top: 6px; color: var(--muted); font-size: 11px; line-height: 1.45; }
 
         .lang-en, .lang-zh { display: none; }
         body.show-zh .lang-zh { display: block; }
@@ -215,6 +215,15 @@
         <p class="sub lang-zh">中国人民大学 · 物理学院 · 博士</p>
         <p class="sub lang-en">Renmin Univ. · Physics · Ph.D. Candidate</p>
         <div class="contact"><span>📧 hanxiaoqi@ruc.edu.cn</span><br><span>📞 18586147407</span></div>
+        <div class="like-area">
+            <button id="like-button" class="like-button" type="button" aria-pressed="false" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+                <span id="like-label-zh" class="lang-zh-inline">点赞</span><span id="like-label-en" class="lang-en-inline">Like</span>
+                <span id="like-count" class="like-count" aria-live="polite">—</span>
+            </button>
+            <p id="like-message" class="like-message" role="status"><span class="lang-zh-inline">正在加载赞数…</span><span class="lang-en-inline">Loading likes…</span></p>
+            <noscript><p class="like-message"><span class="lang-zh-inline">启用 JavaScript 后可查看赞数和点赞。</span><span class="lang-en-inline">Enable JavaScript to view likes and leave a like.</span></p></noscript>
+        </div>
     </div>
     <div class="intro-right">
         <p class="lang-zh">韩小琪，中国人民大学物理学院博士研究生。研究方向为<strong>人工智能驱动的材料逆向设计</strong>，涵盖高温超导体预测、蛋白质-配体对接、材料物相对比学习、声子稳定性基准等。在 <em>npj Computational Materials</em>、<em>Journal of Medicinal Chemistry</em>、<em>Physical Review B</em>、<em>Chinese Physics Letters</em> 等期刊发表和在投论文 16 篇，其中第一/共一作者 11 篇，Google Scholar 总引用 376 次（截至 2026 年 11 月）。开发 <strong><a href="http://phononbench.cn/">PhononBench</a></strong>，分钟级晶体声子谱快速计算平台，累计调用已超 30,000 次。</p>
@@ -296,15 +305,6 @@
 
 </div>
 <footer>
-    <div class="like-area">
-        <button id="like-button" class="like-button" type="button" aria-pressed="false" disabled>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>
-            <span id="like-label-zh" class="lang-zh-inline">点赞</span><span id="like-label-en" class="lang-en-inline">Like</span>
-            <span id="like-count" class="like-count" aria-live="polite">—</span>
-        </button>
-        <p id="like-message" class="like-message" role="status"><span class="lang-zh-inline">正在加载赞数…</span><span class="lang-en-inline">Loading likes…</span></p>
-        <noscript><p class="like-message"><span class="lang-zh-inline">启用 JavaScript 后可查看赞数和点赞。</span><span class="lang-en-inline">Enable JavaScript to view likes and leave a like.</span></p></noscript>
-    </div>
     <p class="lang-zh">韩小琪 · 中国人民大学物理学院</p>
     <p class="lang-en">Xiaoqi Han · School of Physics, Renmin University of China</p>
 </footer>
